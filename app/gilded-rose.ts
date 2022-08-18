@@ -51,14 +51,11 @@ export class GildedRose {
                 if (!(irregularitems.includes(name)) && quality > 0 ){
                         this.items[i].quality = this.items[i].quality - 1 }
                 else if (!(name == "Aged Brie")){
-                            this.items[i].quality = 0
-                        
+                            this.items[i].quality = 0   
                 }
-                
-                else {
-                    if (quality < 50) {
-                        this.items[i].quality = this.items[i].quality + 1
-                    }
+                else if (quality < 50) {
+                    this.items[i].quality = this.items[i].quality + 1
+                    
                 }
             }
         }
