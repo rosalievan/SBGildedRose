@@ -35,13 +35,9 @@ export class GildedRose {
                     if (quality < 50) {
                         this.items[i].quality = this.items[i].quality + 1
 
-                        if (name == 'Backstage passes to a TAFKAL80ETC concert'){
-
-                            if (this.items[i].sellIn < 11 && quality < 50) {
-                                this.items[i].quality = this.items[i].quality + 1}
-                            if (this.items[i].sellIn < 6 && quality < 50) {
-                                this.items[i].quality = this.items[i].quality + 1
-                             }
+                        if (name == 'Backstage passes to a TAFKAL80ETC concert' && quality< 50){
+                            let addition : number = this.items[i].sellIn<6 ? 2 : this.items[i].sellIn < 11 ?  1: 0
+                            this.items[i].quality = this.items[i].quality + addition
                         }
                     }
                 }
