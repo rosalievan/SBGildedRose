@@ -23,24 +23,20 @@ export class GildedRose {
 
         for (let i = 0; i < this.items.length; i++) {
             let item = this.items[i]
-
-            if (
-                !(irregularitems.includes(item.name)) && item.quality > 0) {
-                    item.quality -=  1} 
+            
+            // quality change logic
+            if (!(irregularitems.includes(item.name)) && item.quality > 0) 
+                {item.quality -= 1} 
                 
-                else {
-                    if (item.quality < 50) {
-                        item.quality += 1
+            else {
+                if (item.quality < 50) {
+                    item.quality += 1
 
-                        if (item.name == 'Backstage passes to a TAFKAL80ETC concert' && item.quality< 50){
-                            let addition : number = item.sellIn<6 ? 2 : item.sellIn < 11 ?  1: 0
-                            item.quality += addition
-                        }
-                    }
+                    if (item.name == 'Backstage passes to a TAFKAL80ETC concert'){
+                        let addition : number = item.sellIn<6 ? 2 : item.sellIn < 11 ?  1: 0
+                        item.quality += addition
                 }
-
-            if (item.name != 'Sulfuras, Hand of Ragnaros') {
-                item.sellIn -= 1;
+                }
             }
 
             if (item.sellIn < 0) {
@@ -53,6 +49,11 @@ export class GildedRose {
                     item.quality += 1
                     
                 }
+            }
+
+            // sellIn change login
+            if (item.name != 'Sulfuras, Hand of Ragnaros') {
+                item.sellIn -= 1;
             }
         }
 
