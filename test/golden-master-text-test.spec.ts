@@ -26,9 +26,9 @@ describe('Gilded Rose', function () {
         gildedRose.updateQuality();
         gildedRose.updateQuality();
         
-        for (let i in items){
-            console.log(items[i])
-        }
+        // for (let i in items){
+        //     console.log(items[i])
+        // }
 
         expect(items[0].sellIn).to.equal(-3)
         expect(items[0].quality).to.equal(0)

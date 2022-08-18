@@ -12,9 +12,9 @@ describe('Gilded Rose', function () {
     });
 
     it('Backstage passes to a TAFKAL80ETC concert increases in quality', function (){
-        const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC', 4, 25) ]);
+        const gildedRose = new GildedRose([ new Item('Backstage passes to a TAFKAL80ETC concert', 4, 25) ]);
         const items = gildedRose.updateQuality();
-        // console.log(items);
+        console.log(items);
         expect(items[0].quality).to.equal(28);
     });
 
