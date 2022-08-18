@@ -47,17 +47,15 @@ export class GildedRose {
                 this.items[i].sellIn = this.items[i].sellIn - 1;
             }
             if (this.items[i].sellIn < 0) {
-                if (name != 'Aged Brie') {
-                    if (name != 'Backstage passes to a TAFKAL80ETC concert') {
-                        if (this.items[i].quality > 0) {
-                            if (name != 'Sulfuras, Hand of Ragnaros') {
-                                this.items[i].quality = this.items[i].quality - 1
-                            }
-                        }
-                    } else {
-                        this.items[i].quality = 0
-                    }
-                } else {
+
+                if (!(irregularitems.includes(name)) && quality > 0 ){
+                        this.items[i].quality = this.items[i].quality - 1 }
+                else if (!(name == "Aged Brie")){
+                            this.items[i].quality = 0
+                        
+                }
+                
+                else {
                     if (quality < 50) {
                         this.items[i].quality = this.items[i].quality + 1
                     }
