@@ -23,8 +23,9 @@ export class GildedRose {
 
         for (let i = 0; i < this.items.length; i++) {
             let name: String = this.items[i].name;
-            let quality: Number = this.items[i].quality
-            let sellIn: Number = this.items[i].sellIn
+            let sellIn: Number = this.items[i].sellIn;
+            let quality: Number = this.items[i].quality;
+
 
             if (
                 !(irregularitems.includes(name)) && quality > 0) {
